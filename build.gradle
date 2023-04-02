@@ -10,7 +10,7 @@ allprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/persequor-com/ODINjector")
+                url = uri("https://maven.pkg.github.com/norselibs/ODINjector")
                 credentials {
                     username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_CI_ACTOR")
                     password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_CI_TOKEN")
@@ -23,7 +23,7 @@ allprojects {
         repositories {
             maven {
                 name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/persequor-com/var-http")
+                url = uri("https://maven.pkg.github.com/norselibs/var-http")
                 credentials {
                     username = System.getenv("GITHUB_ACTOR")
                     password = System.getenv("GITHUB_TOKEN")
