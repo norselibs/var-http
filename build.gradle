@@ -6,17 +6,17 @@ allprojects {
     version = project.findProperty('projVersion') ?: '1.0'
 
     repositories {
-        mavenCentral()
-        repositories {
-            maven {
-                name = "GitHubPackages"
-                url = uri("https://maven.pkg.github.com/norselibs/ODINjector")
-                credentials {
-                    username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_CI_ACTOR")
-                    password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_CI_TOKEN")
-                }
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/norselibs/ODINjector")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_CI_ACTOR")
+                password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_CI_TOKEN")
             }
         }
+        mavenCentral()
+
+
     }
 
     publishing {

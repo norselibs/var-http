@@ -1,9 +1,9 @@
 package io.varhttp;
 
-import io.odinjector.Binder;
-import io.odinjector.Context;
+import io.odinjector.binding.Binder;
+import io.odinjector.binding.BindingContext;
 
-public class ControllerFilterContext extends Context {
+public class ControllerFilterContext extends BindingContext {
 	@Override
 	public void configure(Binder binder) {
 		binder.bind(ControllerFilter.class).to(() -> new ControllerFilter() {

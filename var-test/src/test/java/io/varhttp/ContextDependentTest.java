@@ -1,8 +1,8 @@
 package io.varhttp;
 
-import io.odinjector.Binder;
-import io.odinjector.Context;
 import io.odinjector.OdinJector;
+import io.odinjector.binding.Binder;
+import io.odinjector.binding.BindingContext;
 import io.varhttp.controllers.AnotherContextDependentController;
 import io.varhttp.controllers.ContextDependentController;
 import io.varhttp.controllers.IMyContext;
@@ -79,14 +79,14 @@ actual = HttpClient.readContent(con).toString();
 		assertEquals(2, BaseFilter.callCount.get());
 	}
 
-	private static class Context1 extends Context {
+	private static class Context1 extends BindingContext {
 		@Override
 		public void configure(Binder binder) {
 			binder.bind(IMyContext.class).to(MyFirstContext.class);
 		}
 	}
 
-	private static class Context2 extends Context {
+	private static class Context2 extends BindingContext {
 		@Override
 		public void configure(Binder binder) {
 			binder.bind(IMyContext.class).to(MySecondContext.class);
