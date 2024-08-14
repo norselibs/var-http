@@ -33,8 +33,8 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
         env:
-          GITHUB_CI_TOKEN: ${{ secrets.CI_TOKEN }}
-          GITHUB_CI_ACTOR: ${{ secrets.CI_USER }}
+          GITHUB_CI_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_CI_ACTOR: ${{ secrets.GITHUB_ACTOR }}
       - name: versioning
         uses: paulhatch/semantic-version@v4.0.3
         with:
