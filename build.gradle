@@ -10,7 +10,7 @@ allprojects {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/norselibs/ODINjector")
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB    _ACTOR")
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
                 password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
             }
         }
